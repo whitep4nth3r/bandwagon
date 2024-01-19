@@ -9,7 +9,8 @@ class PianoKey extends HTMLElement {
   }
 
   connectedCallback() {
-    const html = `<button class="pianoKey pianoKey--${this.color}">${this.note}${this.sharp}${this.flat}<br>${this.octave}</button>`;
+    const note = `${this.note}${this.sharp}${this.flat}<br>${this.octave}`;
+    const html = `<button class="pianoKey pianoKey--${this.color}">${note}</button>`;
 
     this.innerHTML = html;
 

@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+.piano {
+  --height: 200px;
+  --key-width-white: 60px;
+  --key-width-black: calc(var(--key-width-white) * 0.666);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  height: var(--height);
+  outline: 1px solid red;
+  position: relative;
+}
+
+.pianoOctave__topRow {
+  position: absolute;
+  top: 0;
+  height: calc(var(--height) * 0.666);
+  font-size: 0;
+}
+
+.pianoOctave__bottomRow {
+  height: 100%;
+  font-size: 0;
+}
+
+.pianoKey {
+  appearance: none;
+  border: 0.125rem solid #ccc;
+  height: 100%;
+  margin: 0;
+  font-size: 2px;
+}
+
+.pianoKey--white {
+  color: #000;
+  background-color: #fff;
+  width: var(--key-width-white);
+}
+
+.pianoKey--black {
+  color: #fff;
+  background-color: #000;
+  width: var(--key-width-black);
+}

@@ -4,8 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bandwagon: join in, everyone else is here</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>BANDWAGON</h1>
+
+    <div class="piano">
+      <piano-octave octave="3">
+        <div class="pianoOctave__topRow">
+          <piano-key
+            note="c"
+            color="black"
+            sharp="true"
+            flat="false"></piano-key>
+          <piano-key
+            note="d"
+            color="black"
+            sharp="true"
+            flat="false"></piano-key>
+          <piano-key
+            note="f"
+            color="black"
+            sharp="true"
+            flat="false"></piano-key>
+        </div>
+        <div class="pianoOctave__bottomRow">
+          <piano-key
+            note="c"
+            color="white"
+            sharp="false"
+            flat="false"></piano-key>
+          <piano-key
+            note="d"
+            color="white"
+            sharp="false"
+            flat="false"></piano-key>
+          <piano-key
+            note="e"
+            color="white"
+            sharp="false"
+            flat="false"></piano-key>
+          <piano-key
+            note="f"
+            color="white"
+            sharp="false"
+            flat="false"></piano-key>
+          <piano-key
+            note="g"
+            color="white"
+            sharp="false"
+            flat="false"></piano-key>
+        </div>
+      </piano-octave>
+    </div>
+
+    <script src="bandwagon.js"></script>
   </body>
 </html>

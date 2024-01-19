@@ -2,14 +2,14 @@ class PianoKey extends HTMLElement {
   constructor() {
     super();
     this.note = this.getAttribute("note");
-    this.octave = this.parentElement.parentElement.getAttribute("octave");
+    this.octave = this.parentElement.getAttribute("octave");
     this.sharp = this.getAttribute("sharp") === "true" ? "#" : "";
     this.flat = this.getAttribute("flat") === "true" ? "♭" : "";
     this.color = this.getAttribute("color");
   }
 
   connectedCallback() {
-    const html = `<button class="pianoKey pianoKey--${this.color}">${this.note}${this.sharp}${this.flat} ${this.octave}</button>`;
+    const html = `<button class="pianoKey pianoKey--${this.color}">${this.note}${this.sharp}${this.flat}<br>${this.octave}</button>`;
 
     this.innerHTML = html;
 

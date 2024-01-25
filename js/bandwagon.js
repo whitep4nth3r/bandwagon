@@ -17,10 +17,12 @@ function getSynthNoteIdentifier(note, octave, sharp, flat) {
   return `${note}_${sharp}${flat}_${octave}`;
 }
 
-function notePressed(freq, note, octave, sharp, flat) {
+function notePressed(event, freq, note, octave, sharp, flat) {
   const noteIdentifier = getSynthNoteIdentifier(note, octave, sharp, flat);
 
-  synthOcsillators[noteIdentifier] = playSynthTone(freq);
+  if (event.buttons & 1) {
+    synthOcsillators[noteIdentifier] = playSynthTone(freq);
+  }
 }
 
 function noteReleased(note, octave, sharp, flat) {
@@ -49,15 +51,30 @@ class SynthKey extends HTMLElement {
 
     this.innerHTML = html;
 
-    this.addEventListener("mousedown", () => {
-      notePressed(this.freq, this.note, this.octave, this.sharp, this.flat);
-    });
-    this.addEventListener("mouseup", () => {
-      noteReleased(this.note, this.octave, this.sharp, this.flat);
+    this.addEventListener("mousedown", (event) => {
+      notePressed(
+        event,
+        this.freq,
+        this.note,
+        this.octave,
+        this.sharp,
+        this.flat,
+      );
     });
 
     this.addEventListener("mouseup", () => {
       noteReleased(this.note, this.octave, this.sharp, this.flat);
+    });
+
+    this.addEventListener("mouseover", (event) => {
+      notePressed(
+        event,
+        this.freq,
+        this.note,
+        this.octave,
+        this.sharp,
+        this.flat,
+      );
     });
 
     this.addEventListener("mouseleave", () => {

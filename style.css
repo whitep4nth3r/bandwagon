@@ -2,29 +2,30 @@
   box-sizing: border-box;
 }
 
+html{
+  font-family: sans-serif;
+}
+
 .piano {
   --height: 200px;
   --key-width-white: 60px;
   --key-width-black: calc(var(--key-width-white) * 0.666);
+
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   overflow-x: auto;
+  width: fit-content;
   height: var(--height);
-  outline: 1px solid red;
+
+  margin-inline: auto;
+  outline: 1px solid lightgray;
   position: relative;
 }
 
-.pianoOctave__topRow {
-  position: absolute;
-  top: 0;
-  height: calc(var(--height) * 0.666);
-  font-size: 0;
-}
-
-.pianoOctave__bottomRow {
-  height: 100%;
-  font-size: 0;
+piano-octave{
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .pianoKey {
@@ -32,7 +33,6 @@
   border: 0.125rem solid #ccc;
   height: 100%;
   margin: 0;
-  font-size: 2px;
 }
 
 .pianoKey--white {
@@ -45,4 +45,7 @@
   color: #fff;
   background-color: #000;
   width: var(--key-width-black);
+  height: calc(var(--height) * 0.666);
+  position: absolute;
+  margin-left: calc(var(--key-width-black) * -.5)
 }

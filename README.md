@@ -9,13 +9,13 @@ can be enabled/disabled based on a selected key/mode.
 
 - [x] play sound on click
 - [x] volume control???
-- [ ] style synth on click
+- [x] style synth on click
+- [ ] make synth responsive
 - [ ] bind synth to keys?
 - [ ] set up partykit
 - [ ] identify different users with something on the cursor
 - [ ] send click event over websocket
 - [ ] confirm it works in two windows
-- [ ] make synth responsive
 - [ ] limit notes based on key
 
 ### What we learned in Task 1
@@ -29,3 +29,4 @@ can be enabled/disabled based on a selected key/mode.
 - It's very difficult to create a piano sound with the Web Audio API unless you
   use sample files. You can change the pitch of sample files by using the detune
   function (where you can edit the sound in cents, 100 cents is a semitone).
+- HTML range input has `orient="vertical"`

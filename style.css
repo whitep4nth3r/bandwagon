@@ -2,14 +2,24 @@
   box-sizing: border-box;
 }
 
+:root {
+  --pink: #e84393;
+  --grey-light: #b2bec3;
+  --grey-dark: #2d3436;
+  --purple: #6c5ce7;
+}
+
 html {
   font-family: sans-serif;
+  background-color: black;
+  font-size: 100%;
 }
 
 .synth {
   --height: 200px;
   --key-width-white: 60px;
   --key-width-black: calc(var(--key-width-white) * 0.666);
+  --key-active: var(--pink);
 
   display: flex;
   flex-direction: row;
@@ -18,8 +28,7 @@ html {
   width: fit-content;
   height: var(--height);
 
-  margin-inline: auto;
-  outline: 1px solid lightgray;
+  outline: 1px solid var(--grey-light);
   position: relative;
 }
 
@@ -28,11 +37,47 @@ synth-octave {
   flex-wrap: nowrap;
 }
 
+.synthWithVolume {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem 1rem 1rem;
+  border: 0.25rem solid var(--grey-light);
+  width: max-content;
+}
+
+.synth {
+  --height: 200px;
+  --key-width-white: 60px;
+  --key-width-black: calc(var(--key-width-white) * 0.666);
+  --key-active: var(--pink);
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  width: fit-content;
+  height: var(--height);
+
+  outline: 1px solid var(--grey-light);
+  position: relative;
+}
+
+synth-octave {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.synth__volume {
+}
+
 .synthKey {
   appearance: none;
-  border: 0.125rem solid #ccc;
+  border: 0.125rem solid var(--grey-light);
   height: 100%;
   margin: 0;
+  transition: background-color 0.1s ease-in-out;
 }
 
 .synthKey--white {
@@ -43,9 +88,18 @@ synth-octave {
 
 .synthKey--black {
   color: #fff;
-  background-color: #000;
+  background-color: var(--grey-dark);
   width: var(--key-width-black);
   height: calc(var(--height) * 0.666);
   position: absolute;
   margin-left: calc(var(--key-width-black) * -0.5);
+}
+
+.synthKey:active {
+  background-color: var(--key-active);
+}
+
+input[name="volume__synth"] {
+  appearance: slider-vertical;
+  accent-color: var(--purple);
 }

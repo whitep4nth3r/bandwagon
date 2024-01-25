@@ -47,7 +47,7 @@ class SynthKey extends HTMLElement {
 
   connectedCallback() {
     const note = `${this.note}${this.sharp}${this.flat}<br>${this.octave}`;
-    const html = `<button class="synthKey synthKey--${this.color}">${note}</button>`;
+    const html = `<button class="synthKey synthKey--${this.color}"></button>`;
 
     this.innerHTML = html;
 

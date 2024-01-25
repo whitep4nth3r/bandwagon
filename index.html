@@ -12,27 +12,27 @@
       type="image/x-icon" />
   </head>
   <body>
-    <h1>BANDWAGON</h1>
-
-    <div>
-      <input
-        type="range"
-        min="0.0"
-        max="1.0"
-        step="0.01"
-        value="0.5"
-        list="volumes"
-        name="volume__synth" />
-      <datalist id="volumes">
-        <option value="0.0" label="Mute"></option>
-        <option value="1.0" label="100%"></option>
-      </datalist>
-    </div>
-
-    <div class="synth">
-      <synth-octave octave="3"></synth-octave>
-      <synth-octave octave="4"></synth-octave>
-      <synth-octave octave="5"></synth-octave>
+    <div class="synthWithVolume">
+      <div class="synth__volume">
+        <input
+          type="range"
+          min="0.0"
+          max="1.0"
+          step="0.01"
+          value="0.5"
+          list="volumes"
+          orient="vertical"
+          name="volume__synth" />
+        <datalist id="volumes">
+          <option value="0.0" label="Mute"></option>
+          <option value="1.0" label="100%"></option>
+        </datalist>
+      </div>
+      <div class="synth">
+        <synth-octave octave="3"></synth-octave>
+        <synth-octave octave="4"></synth-octave>
+        <synth-octave octave="5"></synth-octave>
+      </div>
     </div>
 
     <script src="js/data.js"></script>

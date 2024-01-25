@@ -2,11 +2,11 @@
   box-sizing: border-box;
 }
 
-html{
+html {
   font-family: sans-serif;
 }
 
-.piano {
+.synth {
   --height: 200px;
   --key-width-white: 60px;
   --key-width-black: calc(var(--key-width-white) * 0.666);
@@ -23,29 +23,29 @@ html{
   position: relative;
 }
 
-piano-octave{
+synth-octave {
   display: flex;
   flex-wrap: nowrap;
 }
 
-.pianoKey {
+.synthKey {
   appearance: none;
   border: 0.125rem solid #ccc;
   height: 100%;
   margin: 0;
 }
 
-.pianoKey--white {
+.synthKey--white {
   color: #000;
   background-color: #fff;
   width: var(--key-width-white);
 }
 
-.pianoKey--black {
+.synthKey--black {
   color: #fff;
   background-color: #000;
   width: var(--key-width-black);
   height: calc(var(--height) * 0.666);
   position: absolute;
-  margin-left: calc(var(--key-width-black) * -.5)
+  margin-left: calc(var(--key-width-black) * -0.5);
 }

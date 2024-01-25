@@ -5,16 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bandwagon: join in, everyone else is here</title>
     <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII="
+      rel="icon"
+      type="image/x-icon" />
   </head>
   <body>
     <h1>BANDWAGON</h1>
 
-    <div class="piano">
-      <piano-octave octave="3"></piano-octave>
-      <piano-octave octave="4"></piano-octave>
-      <piano-octave octave="5"></piano-octave>
+    <div>
+      <input
+        type="range"
+        min="0.0"
+        max="1.0"
+        step="0.01"
+        value="0.5"
+        list="volumes"
+        name="volume__synth" />
+      <datalist id="volumes">
+        <option value="0.0" label="Mute"></option>
+        <option value="1.0" label="100%"></option>
+      </datalist>
     </div>
 
-    <script src="bandwagon.js"></script>
+    <div class="synth">
+      <synth-octave octave="3"></synth-octave>
+      <synth-octave octave="4"></synth-octave>
+      <synth-octave octave="5"></synth-octave>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/bandwagon.js"></script>
   </body>
 </html>
